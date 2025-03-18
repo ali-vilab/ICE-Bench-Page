@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="ICE-Bench">
+  <meta property="og:title" content="ICE-Bench"/>
+  <meta property="og:description" content="ICE-Bench: A Unified and Comprehensive Benchmark for Image Creating and Editing"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+<!--  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">-->
+<!--  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">-->
+<!--  &lt;!&ndash; Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600&ndash;&gt;-->
+<!--  <meta name="twitter:image" content="static/images/your_twitter_banner_image.jpg">-->
+<!--  <meta name="twitter:card" content="summary_large_image">-->
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="ICE-Bench">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>ICE-Bench: A Unified and Comprehensive Benchmark for Image Creating and Editing</title>
+  <link rel="icon" type="image/x-icon" href="static/images/icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">
+                ICE-Bench: A Unified and Comprehensive Benchmark 
+                for Image Creating and Editing
+            </h1>
+            <div class="is-size-5 publication-authors">
+                <!-- Paper authors -->
+                <span class="author-block">
+                <a href="" target="_blank">Yulin Pan</a><sup>1</sup>, </span>
+                <span class="author-block">
+                <a href="" target="_blank">Xiangteng He</a><sup>2</sup>, </span>
+                <span class="author-block">
+                <a href="" target="_blank">Chaojie Mao</a><sup>1</sup>, </span>
+                <span class="author-block">
+                <a href="" target="_blank">Zhen Han</a><sup>1</sup>, </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                <a href="" target="_blank">Zeyinzi Jiang</a><sup>1</sup>, </span>
+                <span class="author-block">
+                <a href="" target="_blank">Jingfeng Zhang</a><sup>1</sup>, </span>
+                <span class="author-block">
+                <a href="" target="_blank">Yu Liu</a><sup>1</sup></span>
+            </div>
+            <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>Tongyi Lab, Alibaba Group&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="author-block"><sup>2</sup>Peking University</span>
+            </div>
+            <div class="column has-text-centered">
+            <div class="publication-links">
+            
+            <!-- Arxiv PDF link -->
+            <span class="link-block">
+                <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                </span>
+                <span>Paper</span>
+                </a>
+            </span>
+
+            <!-- Supplementary PDF link -->
+            <span class="link-block">
+                <a href="" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Data (Comming Soon)</span>
+                </a>
+            </span>
+
+            <!-- Github link -->
+            <span class="link-block">
+                <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code (Comming Soon)</span>
+                </a>
+            </span>
+            </div>
+
+          </div>
+            <div class="button-container">
+                <button class="button-simple" onclick="scrollToSection('data_vis')">Data Visualization</button>
+                <button class="button-simple" onclick="scrollToSection('eval_dim')">Evaluation Dimensions</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser -->
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+        <img src="static/images/teaser.png" alt="teaser"/>
+        </div>
+    </div>
+</section>
+<!-- End Teaser -->
+
+
+<!-- Paper abstract -->
+<section class="section teaser">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div> <!-- <div class="column is-four-fifths"> -->
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Image generation has witnessed significant advancements in the past few years. However, evaluating the performance of image generation models remains a formidable challenge. 
+              In this paper, we propose <b>ICE-Bench</b>, a unified and comprehensive benchmark designed to rigorously assess image generation models. Its comprehensiveness could be summarized in the following key features:
+              (1) <b>Coarse-to-Fine Tasks</b>: We systematically deconstruct image generation into four task categories: No-ref/Ref Image Creating/Editing, based on the presence or absence of source images and reference images. And further decompose them into 31 fine-grained tasks covering a broad spectrum of image generation requirements, culminating in a comprehensive benchmark.
+              (2) <b>Multi-dimensional Metrics</b>: The evaluation framework assesses image generation capabilities across 6 dimensions: aesthetic quality, imaging quality, prompt following, source consistency, reference consistency, and controllability. 11 metrics are introduced to support the multi-dimensional evaluation. 
+              Notably, we introduce VLLM-QA, an innovative metric designed to assess the success of image editing by leveraging large models.
+              (3) <b>Hybrid Data</b>: The data comes from real scenes and virtual generation, which effectively improves data diversity and alleviates the bias problem in model evaluation. 
+              Through ICE-Bench, we conduct a thorough analysis of existing generation models, revealing both the challenging nature of our benchmark and the gap between current model capabilities and real-world generation requirements.
+              To foster further advancements in the field, we will open-source ICE-Bench, including its dataset, evaluation code, and models, thereby providing a valuable resource for the research community.
+            </p>
+          </div>
+          <img src="static/images/model_eval.png" alt="teaser"/>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+<section id="data_vis" class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Data Visualization</h2>
+      <div id="subject-carousel" class="carousel results-carousel">
+
+        <div class="item">
+            <div class="grid_container">
+                 <div class="grid_item">
+                     <div class="image-container">
+                         <div class="image-item">
+                             <img src="static/images/samples/depth_src.png" width=300, alt="depth source">
+                             <h4 style="font-size: 12px;"><font color="green">[SOURCE]</font></h4>
+                         </div>
+                         <div class="image-item">
+                             <img src="static/images/samples/depth_gen.png" width=300, alt="depth gen">
+                             <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                         </div>
+                     </div>
+                     <h4 style="font-size: 12px;" >
+                         <strong>ItemID</strong>: da0b4a13b1af6906a5a13fbad6c7c891
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>TaskLevel1</strong>: No Reference Editing
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>TaskLevel2</strong>: Controllable Generation
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>Task</strong>: Depth-guided Generation
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>Instruction</strong>: Develop an artistic creation based on the depth map from <font color="green">[SOURCE]</font> in accordance with "A watercolor painting depicts a vintage wooden hutch with a coffee station. The top shelf holds stacked mugs, a teapot, and a glass container. A coffee maker sits on the hutch's lower shelf, alongside a creamer, a teacup and saucer, a jar of coffee beans, and a small potted plant. Leafy green vines frame the sides of the hutch. The entire scene is rendered in warm, earthy tones.".
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>Target Caption</strong>: A watercolor painting depicts a vintage wooden hutch with a coffee station. The top shelf holds stacked mugs, a teapot, and a glass container. A coffee maker sits on the hutch's lower shelf, alongside a creamer, a teacup and saucer, a jar of coffee beans, and a small potted plant. Leafy green vines frame the sides of the hutch. The entire scene is rendered in warm, earthy tones.
+                     </h4>
+                 </div>
+ 
+                 <div class="grid_item">
+                     <div class="image-container">
+                         <div class="image-item">
+                             <img src="static/images/samples/canny_src.png" width=300, alt="canny source">
+                             <h4 style="font-size: 12px;"><font color="green">[SOURCE]</font></h4>
+                         </div>
+                         <div class="image-item">
+                             <img src="static/images/samples/canny_gen.png" width=300, alt="canny gen">
+                             <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                         </div>
+                     </div>
+                     <h4 style="font-size: 12px;" >
+                         <strong>ItemID</strong>: 6cf76f7883307f77104a1fb1508b4c89
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>TaskLevel1</strong>: No Reference Editing
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>TaskLevel2</strong>: Controllable Generation
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>Task</strong>: Edge-guided Generation
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>Instruction</strong>: Develop an art piece using the edge image <font color="green">[SOURCE]</font> according to the description "A large moth, predominantly dark teal and black with symmetrical orange patches on its wings, dominates the center of the image against a deep teal background. Its wings, edged with red and featuring intricate patterns of pale teal and black circular designs, are spread wide. The moth is surrounded by a delicately painted frame of intertwined vines, leaves, and blossoms in muted shades of green, white, and pink. The floral elements create a balanced, almost symmetrical border around the central moth figure. The entire composition evokes a vintage, naturalistic illustration style.".
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>Target Caption</strong>: A large moth, predominantly dark teal and black with symmetrical orange patches on its wings, dominates the center of the image against a deep teal background...
+                     </h4>
+                 </div>
+ 
+                 <div class="grid_item">
+                     <div class="image-container">
+                         <div class="image-item">
+                             <img src="static/images/samples/pose_src.png" width=300, alt="pose source">
+                             <h4 style="font-size: 12px;"><font color="green">[SOURCE]</font></h4>
+                         </div>
+                         <div class="image-item">
+                             <img src="static/images/samples/pose_gen.png" width=300, alt="pose gen">
+                             <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                         </div>
+                     </div>
+                     <h4 style="font-size: 12px;" >
+                         <strong>ItemID</strong>: ffc12338d89e46e67b40416698634363
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>TaskLevel1</strong>: No Reference Editing
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>TaskLevel2</strong>: Controllable Generation
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>Task</strong>: Pose-guided Generation
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>Instruction</strong>: Refer to the posture key point map <font color="green">[SOURCE]</font> to develop an artwork that matches: "A depiction of Spider-Man reimagined with a historical, possibly Mongolian-inspired aesthetic. He wears a red and blue outfit with fur trim and leather accents, squatting in a relaxed pose. His iconic spider mask remains, though adapted to the overall style. The backdrop is a muted blue-grey with a faded circular pattern. He appears as a warrior or nobleman, blending superhero elements with ancient attire.".
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>Target Caption</strong>: A depiction of Spider-Man reimagined with a historical, possibly Mongolian-inspired aesthetic. He wears a red and blue outfit with fur trim and leather accents, squatting in a relaxed pose. His iconic spider mask remains, though adapted to the overall style. The backdrop is a muted blue-grey with a faded circular pattern...
+                     </h4>
+                 </div>
+             
+                 <div class="grid_item">
+                     <div class="image-container">
+                         <div class="image-item">
+                             <img src="static/images/samples/colorize_src.png" width=300, alt="colorize source">
+                             <h4 style="font-size: 12px;"><font color="green">[SOURCE]</font></h4>
+                         </div>
+                         <div class="image-item">
+                             <img src="static/images/samples/colorize_gen.png" width=300, alt="colorize gen">
+                             <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                         </div>
+                     </div>
+                     <h4 style="font-size: 12px;" >
+                         <strong>ItemID</strong>: a3847c63941b51f7deae11f56ce28b4e
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>TaskLevel1</strong>: No Reference Editing
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>TaskLevel2</strong>: Controllable Generation
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>Task</strong>: Image Colorization
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>Instruction</strong>: Follow directions in "A cartoon rabbit, equipped with an orange hiking outfit and backpack, strides along a mountain path. The rabbit appears cheerful and determined as it walks towards the viewer. A picturesque mountain range, featuring sharp peaks and lush green slopes, forms the backdrop." to add color to the gray-scale image <font color="green">[SOURCE]</font>.
+                     </h4>
+                     <h4 style="font-size: 12px;" >
+                         <strong>Target Caption</strong>: A cartoon rabbit, equipped with an orange hiking outfit and backpack, strides along a mountain path. The rabbit appears cheerful and determined as it walks towards the viewer. A picturesque mountain range, featuring sharp peaks and lush green slopes, forms the backdrop. Orange and pink wildflowers dot the foreground and add a touch of color to the scene. The overall image has a bright, vibrant, and adventurous feel.
+                     </h4>
+                 </div>
+             </div>
+        </div>
+
+        <div class="item">
+           <div class="grid_container">
+                <div class="grid_item">
+                    <div class="image-container">
+                        <div class="image-item">
+                            <img src="static/images/samples/color_src.png" width=300, alt="color source">
+                            <h4 style="font-size: 12px;"><font color="green">[SOURCE]</font></h4>
+                        </div>
+                        <div class="image-item">
+                            <img src="static/images/samples/color_gen.png" width=300, alt="color gen">
+                            <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                        </div>
+                    </div>
+                    <h4 style="font-size: 12px;" >
+                        <strong>ItemID</strong>: c5302eed2b7ddf86c0566627fb94382a
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>TaskLevel1</strong>: No Reference Editing
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>TaskLevel2</strong>: Global Editing
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Task</strong>: Color Editing
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Instruction</strong>: Change the cloth color of <font color="green">[SOURCE]</font> from orange to pink.
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Target Caption</strong>: A woman, draped in a flowing, rose-pink gown, reclines gracefully upon an intricately carved chaise lounge of dark wood...
+                    </h4>
+                </div>
+
+                <div class="grid_item">
+                    <div class="image-container">
+                        <div class="image-item">
+                            <img src="static/images/samples/composite_src.png" width=300, alt="compoiste source">
+                            <h4 style="font-size: 12px;"><font color="green">[SOURCE]</font></h4>
+                        </div>
+                        <div class="image-item">
+                            <img src="static/images/samples/composite_gen.png" width=300, alt="composite gen">
+                            <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                        </div>
+                    </div>
+                    <h4 style="font-size: 12px;" >
+                        <strong>ItemID</strong>: 3272b5a82d7f15fb53a9b919780ffc97
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>TaskLevel1</strong>: No Reference Editing
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>TaskLevel2</strong>: Global Editing
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Task</strong>: Composite Editing
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Instruction</strong>: Change <font color="green">[SOURCE]</font> to a watercolor style. Replace the beer with a glass of milk. Give the cat a top hat.
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Target Caption</strong>: A ginger cat, depicted in a loose, watercolor style, sits perched at a rustic wooden bar...
+                    </h4>
+                </div>
+
+                <div class="grid_item">
+                    <div class="image-container">
+                        <div class="image-item">
+                            <img src="static/images/samples/text_render_src.png" width=300, alt="text add source">
+                            <h4 style="font-size: 12px;"><font color="green">[SOURCE]</font></h4>
+                        </div>
+                        <div class="image-item">
+                            <img src="static/images/samples/text_render_gen.png" width=300, alt="text add gen">
+                            <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                        </div>
+                    </div>
+                    <h4 style="font-size: 12px;" >
+                        <strong>ItemID</strong>: 2096b63dd97ba7a21210ca81b2f5ea74
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>TaskLevel1</strong>: No Reference Editing
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>TaskLevel2</strong>: Global Editing
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Task</strong>: Text Render
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Instruction</strong>: Add text 'apple' to the center of <font color="green">[SOURCE]</font>.
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Target Caption</strong>: A silver Apple laptop, likely a slightly older MacBook Pro or PowerBook, rests open on a field of pale green-yellow grass. The laptop's screen is primarily black, but the word "apple" is clearly visible in the center, displayed in a bright, likely white, font. A small, white wireless mouse sits on top of the laptop's trackpad. In the background, a line of trees borders the grassy area, their green leaves providing a contrast to the lighter color of the grass. The scene suggests a relaxed, outdoor setting, perhaps in a park or a backyard.
+                    </h4>
+                </div>
+            
+                <div class="grid_item">
+                    <div class="image-container">
+                        <div class="image-item">
+                            <img src="static/images/samples/subject_add_src.png" width=300, alt="subject add source">
+                            <h4 style="font-size: 12px;"><font color="green">[SOURCE]</font></h4>
+                        </div>
+                        <div class="image-item">
+                            <img src="static/images/samples/subject_add_gen.png" width=300, alt="subject add gen">
+                            <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                        </div>
+                    </div>
+                    <h4 style="font-size: 12px;" >
+                        <strong>ItemID</strong>: ae4c619f5a7f09ab61ddf87bfd76898c
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>TaskLevel1</strong>: No Reference Editing
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>TaskLevel2</strong>: Global Editing
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Task</strong>: Subject Addition
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Instruction</strong>: Add the back of a couple of lovers in <font color="green">[SOURCE]</font>.
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Target Caption</strong>: A massive heart, formed from a dense cluster of smaller hearts and roses in varying shades of red and pink, hangs in the sky like a hot air balloon. Beneath it, a hazy cityscape rises in muted blues and grays, lending an ethereal quality to the scene. Two stylized trees with swirling, rose-like foliage in deep reds frame the landscape on either side. From the ground, numerous smaller heart-shaped balloons ascend on delicate strings, adding to the dreamy atmosphere. Scattered across the dark reddish-brown ground are even tinier heart shapes. At the center of the foreground, silhouetted against the backdrop of the floating heart and distant city, stand two figures...
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+        <div class="grid_container">
+                <div class="grid_item">
+                    <div class="image-container">
+                        <div class="image-item">
+                            <img src="static/images/samples/inp_src.png" width=200, alt="inpainting source">
+                            <h4 style="font-size: 12px;"><font color="green">[SOURCE]</font></h4>
+                        </div>
+                        <div class="image-item">
+                            <img src="static/images/samples/inp_mask.png" width=200, alt="inpainting mask">
+                            <h4 style="font-size: 12px;"><font color="black">[MASK]</font></h4>
+                        </div>
+                        <div class="image-item">
+                            <img src="static/images/samples/inp_gen.png" width=200, alt="inpainting gen">
+                            <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                        </div>
+                    </div>
+                    <h4 style="font-size: 12px;" >
+                        <strong>ItemID</strong>: cbd92e37340c0a0fa505b615f89f7cb7
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>TaskLevel1</strong>: No Reference Editing
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>TaskLevel2</strong>: Local Editing
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Task</strong>: Inpainting
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Instruction</strong>: Rework the parts of <font color="green">[SOURCE]</font> as specified by mask based on the content in "a boat on the lake, cartoon low details illustration, 70's color palette".
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Target Caption</strong>: A picturesque canal city stretches along a waterway, with buildings in warm pastel hues lining the banks. A small, vibrant orange boat sits in the center of the canal, adding a pop of color. Crowning a hill overlooking the cityscape is a grand, light-colored cathedral with prominent domes and a tall spire. The sky is a soft blend of pink and orange, suggesting either sunrise or sunset. A cobbled pathway accompanies the canal and the buildings giving the whole image a peaceful vibe.
+                    </h4>
+                </div>
+
+                <div class="grid_item">
+                    <div class="image-container">
+                        <div class="image-item">
+                            <img src="static/images/samples/out_src.png" width=200, alt="outpainting source">
+                            <h4 style="font-size: 12px;"><font color="green">[SOURCE]</font></h4>
+                        </div>
+                        <div class="image-item">
+                            <img src="static/images/samples/out_mask.png" width=200, alt="outpainting mask">
+                            <h4 style="font-size: 12px;"><font color="black">[MASK]</font></h4>
+                        </div>
+                        <div class="image-item">
+                            <img src="static/images/samples/out_gen.png" width=200, alt="outpainting gen">
+                            <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                        </div>
+                    </div>
+                    <h4 style="font-size: 12px;" >
+                        <strong>ItemID</strong>: bb23b029a02828519fff8eb95cc7d3e0
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>TaskLevel1</strong>: No Reference Editing
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>TaskLevel2</strong>: Local Editing
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Task</strong>: Outpainting
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Instruction</strong>: Extend the <font color="green">[SOURCE]</font> in the mask area but avoid rearranging its original setup. caption: an industrial zone can be seen, high voltage tower lines, tall tower lines, and blue sky clouds. And the man and woman are standing in the front of the painting. He wears glasses, wears a hat, and wears a plaid shirt. He stands with one hand in his pocket, and with one hand on his waist, she is wearing a yellow blouse, and her mouth is slightly open. Above this painting, a few high voltage towers stand in it, and blue skies are dotted with clouds.
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Target Caption</strong>: A man and a woman, both wearing protective eyewear, stand confidently before a backdrop of towering electrical transmission structures...
+                    </h4>
+                </div>
+
+                <div class="grid_item">
+                    <div class="image-container">
+                        <div class="image-item">
+                            <img src="static/images/samples/local_sub_rem_src.png" width=200, alt="local subject removal source">
+                            <h4 style="font-size: 12px;"><font color="green">[SOURCE]</font></h4>
+                        </div>
+                        <div class="image-item">
+                            <img src="static/images/samples/local_sub_rem_mask.png" width=200, alt="local subject removal mask">
+                            <h4 style="font-size: 12px;"><font color="black">[MASK]</font></h4>
+                        </div>
+                        <div class="image-item">
+                            <img src="static/images/samples/local_sub_rem_gen.png" width=200, alt="local subject removal gen">
+                            <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                        </div>
+                    </div>
+                    <h4 style="font-size: 12px;" >
+                        <strong>ItemID</strong>: 07406a9405035ef7e7ae0924240b63bb
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>TaskLevel1</strong>: No Reference Editing
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>TaskLevel2</strong>: Local Editing
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Task</strong>: Local Subject Removal
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Instruction</strong>: Remove the wine in <font color="green">[SOURCE]</font>.
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Target Caption</strong>: The pinkish-red tablecloth, subtly patterned, dominates the scene. Upon it sit several empty wine glasses, their stems slender and their bowls gleaming faintly in the warm, dim light of the room. A clear plastic water bottle with a blue cap stands near the center of the table, some condensation perhaps clinging to its sides...
+                    </h4>
+                </div>
+            
+                <div class="grid_item">
+                    <div class="image-container">
+                        <div class="image-item">
+                            <img src="static/images/samples/local_text_rem_src.png" width=200, alt="local text removal source">
+                            <h4 style="font-size: 12px;"><font color="green">[SOURCE]</font></h4>
+                        </div>
+                        <div class="image-item">
+                            <img src="static/images/samples/local_text_rem_mask.png" width=200, alt="local text removal mask">
+                            <h4 style="font-size: 12px;"><font color="black">[MASK]</font></h4>
+                        </div>
+                        <div class="image-item">
+                            <img src="static/images/samples/local_text_rem_gen.png" width=200, alt="local text removal gen">
+                            <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                        </div>
+                    </div>
+                    <h4 style="font-size: 12px;" >
+                        <strong>ItemID</strong>: f6b99d7bc064d09359dd1fa78bc5cebf
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>TaskLevel1</strong>: No Reference Editing
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>TaskLevel2</strong>: Local Editing
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Task</strong>: Local Text Removal
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Instruction</strong>: In the <font color="green">[SOURCE]</font>, obliterate the text found in the mask zone.
+                    </h4>
+                    <h4 style="font-size: 12px;" >
+                        <strong>Target Caption</strong>: A pixel art fruit and vegetable stand glows warmly against the night. A man with dark hair and an orange shirt stands to the left, gazing at the colorful produce. The stand is topped by a reddish-pink awning, now devoid of any signage. Piles of oranges rest on green cloths, forming small pyramids...
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="grid_container">
+                    <div class="grid_item">
+                        <div class="image-container">
+                            <div class="image-item">
+                                <img src="static/images/samples/face_ref.png" width=225, alt="face ref">
+                                <h4 style="font-size: 12px;"><font color="red">[REF_1]</font></h4>
+                            </div>
+                            <div class="image-item">
+                                <img src="static/images/samples/face_gen.png" width=300, alt="face gen">
+                                <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                            </div>
+                        </div>
+                        <h4 style="font-size: 12px;" >
+                            <strong>ItemID</strong>: 1fb63b29fba3a36d7fbbd7717441f0f8
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>TaskLevel1</strong>: Reference Generation
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>TaskLevel2</strong>: Face Reference Generation
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>Task</strong>: Face Reference Generation
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>Instruction</strong>: Maintain the same facial features of the girl in <font color="red">[REF_1]</font>, A young girl baking cookies in a cozy kitchen. Flour is dusted across the counter, and she wears an apron that's a bit too big, grinning as she adds chocolate chips to the dough, showing a sense of joy.
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>Target Caption</strong>: A young girl baking cookies in a cozy kitchen. Flour is dusted across the counter, and she wears an apron that's a bit too big, grinning as she adds chocolate chips to the dough.
+                        </h4>
+                    </div>
+    
+                    <div class="grid_item">
+                        <div class="image-container">
+                            <div class="image-item">
+                                <img src="static/images/samples/sub_ref.png" width=300, alt="subject ref">
+                                <h4 style="font-size: 12px;"><font color="red">[REF_1]</font></h4>
+                            </div>
+                            <div class="image-item">
+                                <img src="static/images/samples/sub_gen.png" width=300, alt="subject gen">
+                                <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                            </div>
+                        </div>
+                        <h4 style="font-size: 12px;" >
+                            <strong>ItemID</strong>: 4a554a24fead2fd82306c61945406072
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>TaskLevel1</strong>: Reference Generation
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>TaskLevel2</strong>: Subject Reference Generation
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>Task</strong>: Subject Reference Generation
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>Instruction</strong>: Refer to the subject in <font color="red">[REF_1]</font>, A stuffed bunny is holding an apple and standing on the table.
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>Target Caption</strong>: A stuffed bunny is holding an apple and standing on the table.
+                        </h4>
+                    </div>
+    
+                    <div class="grid_item">
+                        <div class="image-container">
+                            <div class="image-item">
+                                <img src="static/images/samples/style_ref.png" width=300, alt="style ref">
+                                <h4 style="font-size: 12px;"><font color="red">[REF_1]</font></h4>
+                            </div>
+                            <div class="image-item">
+                                <img src="static/images/samples/style_gen.png" width=300, alt="style gen">
+                                <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                            </div>
+                        </div>
+                        <h4 style="font-size: 12px;" >
+                            <strong>ItemID</strong>: 6283efda0798f126c9ef8988fc4496ff
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>TaskLevel1</strong>: Reference Generation
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>TaskLevel2</strong>: Style Reference Generation
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>Task</strong>: Style Reference Generation
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>Instruction</strong>: Using the style seen in <font color="red">[REF_1]</font>, create a masterpiece that adheres to 'These people are walking a dog in the snow.'.
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>Target Caption</strong>: These people are walking a dog in the snow.
+                        </h4>
+                    </div>
+                
+                    <div class="grid_item">
+                        <div class="image-container">
+                            <div class="image-item">
+                                <img src="static/images/samples/t2i_1.png" width=300, alt="t2i gen1">
+                                <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                            </div>
+                            <div class="image-item">
+                                <img src="static/images/samples/t2i_2.png" width=300, alt="t2i gen2">
+                                <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                            </div>
+                        </div>
+                        <h4 style="font-size: 12px;" >
+                            <strong>ItemID</strong>: 51dc42742f6c61cd02ce854a704a111c
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>TaskLevel1</strong>: No Reference Generation
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>TaskLevel2</strong>: Text2Image
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>Task</strong>: Text2Image
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>Instruction</strong>: A yellow car on a city road, in the style of noir comic art, CryEngine, vibrant stage backdrops, manga-inspired.
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>Target Caption</strong>: A yellow car on a city road, in the style of noir comic art, CryEngine, vibrant stage backdrops, manga-inspired.
+                        </h4>
+                    </div>
+                </div>
+        </div>
+
+        <div class="item">
+            <div class="grid_container">
+                    <div class="grid_item">
+                        <div class="image-container">
+                            <div class="image-item">
+                                <img src="static/images/samples/face_swap_src.png" width=300, alt="face swap src">
+                                <h4 style="font-size: 12px;"><font color="green">[SOURCE]</font></h4>
+                            </div>
+                            <div class="image-item">
+                                <img src="static/images/samples/face_swap_mask.png" width=300, alt="face swap mask">
+                                <h4 style="font-size: 12px;"><font color="black">[MASK]</font></h4>
+                            </div>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-item">
+                                <img src="static/images/samples/face_swap_ref.png" width=295, alt="face swap ref">
+                                <h4 style="font-size: 12px;"><font color="red">[REF_1]</font></h4>
+                            </div>
+                            <div class="image-item">
+                                <img src="static/images/samples/face_swap_gen.png" width=305, alt="face swap gen">
+                                <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                            </div>
+                        </div>
+                        <h4 style="font-size: 12px;" >
+                            <strong>ItemID</strong>: 4bebebc9f2a08e2c27933a7e6f0f1733
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>TaskLevel1</strong>: Reference Editing
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>TaskLevel2</strong>: Face Reference Editing
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>Task</strong>: Face Swap
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>Instruction</strong>: Make the person in <font color="green">[SOURCE]</font> to have a face in <font color="red">[REF_1]</font>.
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>Target Caption</strong>: A young girl with light brown, slightly wavy hair is holding a dark cell phone to her ear, as if in the middle of a phone conversation. She wears a denim jacket...
+                        </h4>
+                    </div>
+    
+                    <div class="grid_item">
+                        <div class="image-container">
+                            <div class="image-item">
+                                <img src="static/images/samples/sub_inp_src.png" width=300, alt="sub inp src">
+                                <h4 style="font-size: 12px;"><font color="green">[SOURCE]</font></h4>
+                            </div>
+                            <div class="image-item">
+                                <img src="static/images/samples/sub_inp_mask.png" width=300, alt="sub inp mask">
+                                <h4 style="font-size: 12px;"><font color="black">[MASK]</font></h4>
+                            </div>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-item">
+                                <img src="static/images/samples/sub_inp_ref.png" width=218, alt="sub inp ref">
+                                <h4 style="font-size: 12px;"><font color="red">[REF_1]</font></h4>
+                            </div>
+                            <div class="image-item">
+                                <img src="static/images/samples/sub_inp_gen.png" width=382, alt="sub inp gen">
+                                <h4 style="font-size: 12px;"><font color="blue">[GEN_CASE]</font></h4>
+                            </div>
+                        </div>
+                        <h4 style="font-size: 12px;" >
+                            <strong>ItemID</strong>: f3218e38eb6c36a6da2a274a0b70c942
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>TaskLevel1</strong>: Reference Editing
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>TaskLevel2</strong>: Subject Reference Editing
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>Task</strong>: Subject-guided Inpainting
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>Instruction</strong>: Re-illustrate the mask of <font color="green">[SOURCE]</font> with guidance from <font color="red">[REF_1]</font>.
+                        </h4>
+                        <h4 style="font-size: 12px;" >
+                            <strong>Target Caption</strong>: A cheerful, bright yellow rubber duck sits at the center of a dark, complex, and technological structure. The duck, with its signature orange beak and simple black eyes, replaces the Earth in the original composition. It rests on a platform of intricate circuitry, glowing faintly with blue light, which mirrors the original base. The green tendrils, formerly suggestive of data streams or energy pathways, now appear to playfully wrap around the duck, as if embracing it. The overall atmosphere remains dark and dramatic, with the backdrop a hazy mix of blacks and deep blues. The duck, however, introduces a stark contrast of vibrant color and simplistic form against the complex, technological environment, creating a whimsical and slightly surreal juxtaposition. The grid-like structure of the original globe is absent, replaced by the smooth, matte surface of the rubber duck.
+                        </h4>
+                    </div>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="eval_dim" class="hero is-small">
+<div class="hero-body">
+    <div class="container">
+        <h2 class="title is-3">Evaluation Dimensions</h2>
+        <div id="eval_dim_container" class="carousel results-carousel">
+            <div class="item">
+                <div class="grid_container2">
+                    <div class="grid_item">
+                        <img src="static/images/dim/supp_aes_case.png" alt="aes">
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="grid_container2">
+                    <div class="grid_item">
+                        <img src="static/images/dim/supp_img_case.png" alt="img">
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="grid_container2">
+                    <div class="grid_item">
+                        <img src="static/images/dim/supp_pf_case.png" alt="pf">
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="grid_container2">
+                    <div class="grid_item">
+                        <img src="static/images/dim/supp_src_case.png" alt="src">
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="grid_container2">
+                    <div class="grid_item">
+                        <img src="static/images/dim/supp_ref_case.png" alt="ref">
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="grid_container2">
+                    <div class="grid_item">
+                        <img src="static/images/dim/supp_ctrl_case.png" alt="ctrl">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</section>
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @article{icebench,
+            title = {ICE-Bench: A Unified and Comprehensive Benchmark for Image Creating and Editing},
+            author = {Pan, Yulin and He, Xiangteng and Mao, Chaojie and Han, Zhen and Jiang, Zeyinzi and Zhang, Jingfeng and Liu, Yu},
+            journal = {arXiv preprint arXiv:xxxx.yyyyy},
+            year = {2025}
+        }
+      </code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+<script>
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        section.scrollIntoView();
+    }
+</script>
+
+</body>
+</html>
